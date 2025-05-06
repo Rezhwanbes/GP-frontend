@@ -1,0 +1,29 @@
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #eaeaea;
+}
+
+.logout-button {
+    background-color: red;
+    border: none;
+    padding: 10px;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: white;
+}
+
+.logout-button:hover {
+    background: #d95858;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}

@@ -1,0 +1,408 @@
+.level6-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+.level-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.level-description {
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.challenge-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.progress-step {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background-color: #ecf0f1;
+    color: #7f8c8d;
+    position: relative;
+}
+
+.progress-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #ecf0f1;
+    z-index: 1;
+}
+
+.progress-step:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid white;
+    z-index: 2;
+}
+
+.progress-step.active {
+    background-color: #3498db;
+    color: white;
+}
+
+.progress-step.active::after {
+    border-left-color: #3498db;
+}
+
+.challenge-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.step-indicator {
+    background-color: #f1c40f;
+    color: #34495e;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.scenario-box {
+    background-color: #f9f9f9;
+    border-left: 4px solid #3498db;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.response-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.response-card {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background-color: #ecf0f1;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.response-card:hover {
+    background-color: #d6eaf8;
+}
+
+.response-card.selected {
+    background-color: #3498db;
+    color: white;
+}
+
+.response-card input {
+    margin-left: 10px;
+}
+
+.check-button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.check-button:hover {
+    background-color: #27ae60;
+}
+
+.check-button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+.feedback {
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.feedback.correct {
+    background-color: #d5f5e3;
+    color: #27ae60;
+}
+
+.feedback.incorrect {
+    background-color: #fadbd8;
+    color: #e74c3c;
+}
+
+.feedback.warning {
+    background-color: #fdebd0;
+    color: #f39c12;
+}
+
+.feedback i {
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+/* Email challenge styles */
+.email-preview {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.email-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.phishing-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-success {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.email-review {
+    margin-top: 20px;
+}
+
+.email-review-item {
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.email-review-item.correct {
+    background-color: #d5f5e3;
+}
+
+.email-review-item.incorrect {
+    background-color: #fadbd8;
+}
+
+.clues {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #ccc;
+}
+
+/* Firewall challenge styles */
+.firewall-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.setting-group {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.radio-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.radio-options label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-options input {
+    margin-left: 10px;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2ecc71;
+}
+
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+.setting-description {
+    color: #7f8c8d;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.recommendations {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc;
+}
+
+.recommendations ul {
+    padding-right: 20px;
+}
+
+.final-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.final-modal {
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.modal-header.success {
+    background-color: #2ecc71;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.score-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    font-size: 24px;
+    color: #2c3e50;
+}
+
+.score-display i {
+    margin-left: 10px;
+    color: #f1c40f;
+}
+
+.achievements {
+    list-style-type: none;
+    padding: 0;
+}
+
+.achievements li {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.achievements i {
+    margin-left: 10px;
+    color: #2ecc71;
+}
+
+.modal-footer {
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.btn-success {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-success:hover {
+    background-color: #27ae60;
+}

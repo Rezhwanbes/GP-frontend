@@ -1,0 +1,151 @@
+/* Level 7 Specific Styles */
+.level7-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.url-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.url-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.url-card.selected {
+    border-color: #4CAF50;
+    background-color: #f8fff8;
+}
+
+.url-card .url-text {
+    font-family: monospace;
+    margin-bottom: 5px;
+    word-break: break-all;
+}
+
+.url-card .url-status {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.url-card .url-status.safe {
+    color: #4CAF50;
+}
+
+.url-card .url-status.unsafe {
+    color: #f44336;
+}
+
+.features-list {
+    margin: 20px 0;
+}
+
+.feature-item {
+    padding: 10px;
+    border: 1px solid #eee;
+    margin-bottom: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.feature-item.selected {
+    background-color: #f0f8ff;
+    border-color: #2196F3;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.option-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.option-card.selected {
+    border-color: #4CAF50;
+    background-color: #f8fff8;
+}
+
+.search-engine-comparison {
+    margin-top: 30px;
+}
+
+.engine-table {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.engine-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.engine-row:last-child {
+    border-bottom: none;
+}
+
+.engine-row.high {
+    background-color: #e8f5e9;
+}
+
+.engine-row.medium {
+    background-color: #fff8e1;
+}
+
+.engine-row.low {
+    background-color: #ffebee;
+}
+
+.settings-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.settings-section {
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.setting-item {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.setting-item label {
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.recommendations {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.recommendations li {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}

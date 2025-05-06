@@ -1,0 +1,154 @@
+/* GameChapters.css */
+.game-chapters {
+    padding: 4rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.section-title p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.chapters-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.chapter-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.chapter-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.chapter-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #1a2736 100%);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.chapter-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.chapter-content {
+    padding: 1.5rem;
+}
+
+.level-item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.level-item:hover {
+    background: #e3f2fd;
+    transform: translateX(-5px);
+}
+
+.level-item.locked {
+    opacity: 0.7;
+    background: #f0f0f0;
+    cursor: not-allowed;
+}
+
+.level-icon {
+    width: 40px;
+    height: 40px;
+    background: #4fc3f7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    color: white;
+    font-weight: bold;
+}
+
+.level-info h4 {
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+}
+
+.level-info p {
+    font-size: 0.9rem;
+    color: #666;
+}
+/* GameChapters.css additions */
+[dir="rtl"] .chapter-header,
+[dir="rtl"] .level-info {
+    text-align: right;
+}
+
+[dir="ltr"] .chapter-header,
+[dir="ltr"] .level-info {
+    text-align: left;
+}
+
+.level-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.locked-content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    opacity: 0.7;
+}
+
+.unlocked-link {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.level-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.lock-icon {
+    margin-left: auto;
+    padding: 0 10px;
+}
+
+[dir="rtl"] .lock-icon {
+    margin-left: 0;
+    margin-right: auto;
+}

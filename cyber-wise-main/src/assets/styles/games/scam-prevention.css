@@ -1,0 +1,258 @@
+.level4-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+.level-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.level-description {
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.challenge-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.progress-step {
+    padding: 10px 15px;
+    background: #ecf0f1;
+    border-radius: 20px;
+    color: #7f8c8d;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    flex: 1;
+    margin: 0 5px;
+}
+
+.progress-step.active {
+    background: #9b59b6;
+    color: white;
+}
+
+.challenge-card {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.scenario-box {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+    border-right: 4px solid #9b59b6;
+}
+
+.scenario-box h4 {
+    margin-top: 0;
+    color: #9b59b6;
+}
+
+.response-options {
+    margin: 25px 0;
+}
+
+.response-card {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.response-card:hover {
+    border-color: #9b59b6;
+}
+
+.response-card.selected {
+    border-color: #9b59b6;
+    background: #f3e6f8;
+}
+
+.response-card input {
+    margin-left: 10px;
+}
+
+.check-button {
+    background: #9b59b6;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+    font-weight: bold;
+}
+
+.feedback {
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.feedback.correct {
+    background: #d4edda;
+    color: #155724;
+}
+
+.feedback.incorrect {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.feedback i {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.scenarios-list {
+    margin: 20px 0;
+}
+
+.scenario-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.scenario-item.selected {
+    border-color: #9b59b6;
+    background: #f3e6f8;
+}
+
+.scenario-item input {
+    margin-left: 10px;
+}
+
+.step-indicator {
+    background: #9b59b6;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.final-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.final-modal {
+    background: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    overflow: hidden;
+}
+
+.modal-header.success {
+    background: #9b59b6;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.modal-header i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.score-display {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.score-display i {
+    color: #f39c12;
+    margin-left: 10px;
+}
+
+.achievements {
+    list-style: none;
+    padding: 0;
+}
+
+.achievements li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.achievements i {
+    margin-left: 10px;
+    color: #27ae60;
+}
+
+.modal-footer {
+    padding: 15px;
+    text-align: center;
+}
+
+.btn-success {
+    background: #9b59b6;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .challenge-progress {
+        flex-direction: column;
+    }
+
+    .progress-step {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}

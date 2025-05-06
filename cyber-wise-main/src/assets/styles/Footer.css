@@ -1,0 +1,33 @@
+/* Footer.css */
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 1rem;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+footer ul li {
+    margin: 0 1rem;
+}
+
+footer ul li a {
+    color: #4fc3f7;
+    text-decoration: none;
+}
+
+.copyright {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #aaa;
+}

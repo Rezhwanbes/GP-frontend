@@ -1,0 +1,325 @@
+.level7-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+.level-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.level-description {
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.challenge-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.challenge-progress::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 0;
+    left: 0;
+    height: 4px;
+    background-color: #ecf0f1;
+    z-index: 1;
+}
+
+.progress-step {
+    position: relative;
+    text-align: center;
+    flex: 1;
+    z-index: 2;
+    color: #95a5a6;
+    font-weight: bold;
+}
+
+.progress-step::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #ecf0f1;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    line-height: 30px;
+    color: white;
+}
+
+.progress-step.active {
+    color: #2c3e50;
+}
+
+.progress-step.active::before {
+    background-color: #3498db;
+    content: '✓';
+    color: white;
+}
+
+.challenge-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.scenario-box {
+    background-color: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.alert-box {
+    border-left-color: #e74c3c;
+}
+
+.response-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.response-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.response-card:hover {
+    background-color: #e9ecef;
+}
+
+.response-card.selected {
+    background-color: #d4edff;
+    border: 1px solid #3498db;
+}
+
+.response-card input {
+    margin-left: 10px;
+}
+
+.check-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto 0;
+    transition: background-color 0.3s;
+}
+
+.check-button:hover {
+    background-color: #2980b9;
+}
+
+.feedback {
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.feedback.correct {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.feedback.incorrect {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.feedback i {
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+.step-indicator {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #7f8c8d;
+    font-weight: bold;
+}
+
+.rules-list, .scenarios-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.rule-item, .scenario-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.rule-item:hover, .scenario-item:hover {
+    background-color: #e9ecef;
+}
+
+.rule-item.selected, .scenario-item.selected {
+    background-color: #d4edff;
+    border: 1px solid #3498db;
+}
+
+.scan-progress {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    height: 30px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.progress-bar {
+    background-color: #3498db;
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.5s;
+}
+
+.scan-progress span {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.scan-summary {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.vulnerability-list {
+    margin: 20px 0;
+}
+
+.vulnerability-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.vulnerability-info {
+    display: flex;
+    align-items: center;
+}
+
+.severity {
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 10px;
+    color: white;
+}
+
+.severity.critical {
+    background-color: #dc3545;
+}
+
+.severity.high {
+    background-color: #fd7e14;
+}
+
+.severity.medium {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.severity.low {
+    background-color: #28a745;
+}
+
+.fix-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.fix-button:hover {
+    background-color: #218838;
+}
+
+.fixed-label {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.vulnerability-item.fixed {
+    opacity: 0.7;
+    background-color: #e8f5e9;
+}
+
+.fix-progress {
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.network-modal {
+    max-width: 700px;
+}
+
+.network-tips {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.network-tips h4 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.network-tips ul {
+    padding-right: 20px;
+}
+
+.network-tips li {
+    margin-bottom: 8px;
+}
