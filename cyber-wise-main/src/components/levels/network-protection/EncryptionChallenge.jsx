@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {useLanguage} from "../../../LanguageContext.jsx";
+import { useLanguage } from "../../../LanguageContext.jsx";
 
 const EncryptionChallenge = ({ completeChallenge }) => {
     const { language, translations } = useLanguage();
@@ -8,6 +8,7 @@ const EncryptionChallenge = ({ completeChallenge }) => {
     const [currentStep, setCurrentStep] = useState(1);
     const [userAnswers, setUserAnswers] = useState({});
     const [showResult, setShowResult] = useState(false);
+    const [finalScore, setFinalScore] = useState(0);
 
     const steps = [
         {
@@ -29,34 +30,10 @@ const EncryptionChallenge = ({ completeChallenge }) => {
                 ? "کام لەم ڕێسایانە پێویستە بەکاربهێنرێن بۆ پاراستنی باشی تۆڕی بێسیم؟"
                 : "Which of these practices should be used to properly secure a wireless network?",
             options: [
-                {
-                    id: 1,
-                    text: language === 'kurdish'
-                        ? "بەکارهێنانی وشەی نهێنی بەهێز"
-                        : "Using a strong password",
-                    correct: true
-                },
-                {
-                    id: 2,
-                    text: language === 'kurdish'
-                        ? "پەنابردن بە شێوەزارکردنی WPA3"
-                        : "Using WPA3 encryption",
-                    correct: true
-                },
-                {
-                    id: 3,
-                    text: language === 'kurdish'
-                        ? "وشەی نهێنی پێوانەیی وەک 'password123'"
-                        : "Standard passwords like 'password123'",
-                    correct: false
-                },
-                {
-                    id: 4,
-                    text: language === 'kurdish'
-                        ? "شاردنەوەی ناوی تۆڕ (SSID)"
-                        : "Hiding the network name (SSID)",
-                    correct: true
-                }
+                { id: 1, text: language === 'kurdish' ? "بەکارهێنانی وشەی نهێنی بەهێز" : "Using a strong password", correct: true },
+                { id: 2, text: language === 'kurdish' ? "پەنابردن بە شێوەزارکردنی WPA3" : "Using WPA3 encryption", correct: true },
+                { id: 3, text: language === 'kurdish' ? "وشەی نهێنی پێوانەیی وەک 'password123'" : "Standard passwords like 'password123'", correct: false },
+                { id: 4, text: language === 'kurdish' ? "شاردنەوەی ناوی تۆڕ (SSID)" : "Hiding the network name (SSID)", correct: true }
             ],
             type: "multiple"
         },
@@ -66,34 +43,10 @@ const EncryptionChallenge = ({ completeChallenge }) => {
                 ? "ئەگەر پەیوەندییەکی VPN دروست بکەیت، چی ڕوودەدات؟"
                 : "When you establish a VPN connection, what happens?",
             options: [
-                {
-                    id: 1,
-                    text: language === 'kurdish'
-                        ? "هەموو پەیوەندیەکان شێوەزار دەکرێن"
-                        : "All connections are encrypted",
-                    correct: true
-                },
-                {
-                    id: 2,
-                    text: language === 'kurdish'
-                        ? "خێرایی ئینتەرنێت زیاد دەکات"
-                        : "Internet speed increases",
-                    correct: false
-                },
-                {
-                    id: 3,
-                    text: language === 'kurdish'
-                        ? "IP ناونیشانەکەت دەشاردرێتەوە"
-                        : "Your IP address is hidden",
-                    correct: true
-                },
-                {
-                    id: 4,
-                    text: language === 'kurdish'
-                        ? "هیچ پاراستنێکی زیادە ناکرێت"
-                        : "No additional protection is added",
-                    correct: false
-                }
+                { id: 1, text: language === 'kurdish' ? "هەموو پەیوەندیەکان شێوەزار دەکرێن" : "All connections are encrypted", correct: true },
+                { id: 2, text: language === 'kurdish' ? "خێرایی ئینتەرنێت زیاد دەکات" : "Internet speed increases", correct: false },
+                { id: 3, text: language === 'kurdish' ? "IP ناونیشانەکەت دەشاردرێتەوە" : "Your IP address is hidden", correct: true },
+                { id: 4, text: language === 'kurdish' ? "هیچ پاراستنێکی زیادە ناکرێت" : "No additional protection is added", correct: false }
             ],
             type: "multiple"
         }
@@ -109,15 +62,6 @@ const EncryptionChallenge = ({ completeChallenge }) => {
             } else {
                 setUserAnswers({ ...userAnswers, [stepId]: [...currentAnswers, answerId] });
             }
-        }
-    };
-
-    const nextStep = () => {
-        if (currentStep < steps.length) {
-            setCurrentStep(currentStep + 1);
-        } else {
-            calculateScore();
-            setShowResult(true);
         }
     };
 
@@ -140,8 +84,17 @@ const EncryptionChallenge = ({ completeChallenge }) => {
         });
 
         const score = Math.floor((correctAnswers / steps.length) * 40);
+        setFinalScore(score);
         setTimeout(() => completeChallenge(score), 2000);
-        return score;
+    };
+
+    const nextStep = () => {
+        if (currentStep < steps.length) {
+            setCurrentStep(currentStep + 1);
+        } else {
+            calculateScore();
+            setShowResult(true);
+        }
     };
 
     return (
@@ -185,8 +138,8 @@ const EncryptionChallenge = ({ completeChallenge }) => {
                     </button>
                 </>
             ) : (
-                <div className={`feedback ${calculateScore() >= 30 ? 'correct' : 'incorrect'}`}>
-                    {calculateScore() >= 30 ? (
+                <div className={`feedback ${finalScore >= 30 ? 'correct' : 'incorrect'}`}>
+                    {finalScore >= 30 ? (
                         <>
                             <i className="fas fa-check-circle"></i>
                             <p>
@@ -197,7 +150,7 @@ const EncryptionChallenge = ({ completeChallenge }) => {
                             <p>
                                 {language === 'kurdish'
                                     ? 'کۆی خاڵەکان: '
-                                    : 'Total score: '}{calculateScore()}
+                                    : 'Total score: '}{finalScore}
                             </p>
                         </>
                     ) : (
@@ -211,7 +164,7 @@ const EncryptionChallenge = ({ completeChallenge }) => {
                             <p>
                                 {language === 'kurdish'
                                     ? 'کۆی خاڵەکان: '
-                                    : 'Total score: '}{calculateScore()}
+                                    : 'Total score: '}{finalScore}
                             </p>
                         </>
                     )}
